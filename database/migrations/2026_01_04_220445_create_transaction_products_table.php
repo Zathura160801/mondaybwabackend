@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('transaction_products', function (Blueprint $table) {
             $table->id();
+            $table->unsignedInteger('quantity');
+            $table->unsignedInteger('sub_total');
+            $table->unsignedInteger('price');
+            $table->foreignId('transaction_id')->constrained()->onDelete('cascade');
+            $table->foreignId('product_id')->constrained()->onDelete('cascade');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
