@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\WarehouseProduct;
+use Illuminate\Validation\ValidationException;
 
 class WarehouseProductRepository
 {
